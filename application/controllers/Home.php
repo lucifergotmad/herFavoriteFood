@@ -2,6 +2,12 @@
 
 class Home extends CI_Controller
 {
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->helper('url');
+        $this->load->model('Orang_model');
+    }
     public function index()
     {
         date_default_timezone_set("Asia/Jakarta");
@@ -16,9 +22,9 @@ class Home extends CI_Controller
         } else {
             $salam = "Malam";
         }
-        $data['nama'] = "Virginia Mutiara Putri Dermawan";
         $data['salam'] = $salam;
-        $this->load->helper('url');
+        $data['orang'] = $this->Orang_model->getPerson()[0];
+
         $this->load->view('templates/header');
         $this->load->view('home/index', $data);
         $this->load->view('templates/footer');
