@@ -2,7 +2,7 @@
 <h1>Virginia</h1>
 
 <p>Boleh tau makanan</p>
-<form action="makanan/tambah" method="POST">
-  <input type="text" name="nama">
+<form action="foods/add" method="POST">
+  <input type="text" name="name">
   <button type="submit">Simpan</button>
 </form>
