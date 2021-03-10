@@ -11,7 +11,7 @@ class Foods extends CI_Controller
 
     public function index()
     {
-        $data['judul'] = "Foods";
+        $data['title'] = "Foods";
         $data['foods'] = $this->Foods_model->getAllFoods();
         $this->load->view('templates/header', $data);
         $data['foods'] ? $this->load->view('foods/index', $data) : $this->load->view('foods/404');
@@ -19,7 +19,7 @@ class Foods extends CI_Controller
     }
     public function add()
     {
-        $data['judul'] = "Foods";
+        $data['title'] = "Foods";
         $this->form_validation->set_rules('name', 'Name', 'required');
         if ($this->form_validation->run() == false) {
             $this->load->view('templates/header', $data);
